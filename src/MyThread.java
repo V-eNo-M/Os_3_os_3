@@ -14,7 +14,7 @@ public class MyThread implements Runnable{
 
         System.out.println("Start thread " + name);
         try {
-            Thread.sleep(leng*100);
+            Thread.sleep(leng*200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

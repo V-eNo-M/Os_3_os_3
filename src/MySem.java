@@ -22,7 +22,7 @@ public class MySem implements Runnable{
             // семафор--
             semaphore.acquire();
 
-            Thread.sleep(leng*100);
+            Thread.sleep(leng*200);
 
         }
         catch (InterruptedException e)
