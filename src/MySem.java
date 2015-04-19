@@ -1,9 +1,9 @@
 import java.util.concurrent.Semaphore;
 
 /**
- * Created by Иван on 15.04.2015.
+ * Created by Иван on 15.04.2015
  */
-public class MySem extends MyThread{
+public class MySem implements Runnable{
     private Semaphore semaphore;
     private String name;
     private int leng;
@@ -19,7 +19,7 @@ public class MySem extends MyThread{
         System.out.println("Start thread "+ name);
         try
         {
-            // Берем семафор
+            // семафор--
             semaphore.acquire();
 
             Thread.sleep(leng*100);

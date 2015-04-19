@@ -1,5 +1,5 @@
 /**
- * Created by Иван on 15.04.2015.
+ * Created by Иван on 15.04.2015
  */
 public class MyThread implements Runnable{
     private String name;
@@ -7,10 +7,6 @@ public class MyThread implements Runnable{
     public MyThread(String name,int leng){
         this.name = name;
         this.leng = leng;
-    }
-
-
-    public MyThread() {
     }
 
     @Override
