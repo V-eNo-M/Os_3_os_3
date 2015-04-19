@@ -25,15 +25,15 @@ public class Main {
         G.start();
         B.start();
         Thread F = new Thread(new MySem("F", 20,semaphore));
-        getOrWait(B,F);
+        startOrWait(B,F);
         Thread E = new Thread(new MySem("E", 50,semaphore));
-        getOrWait(C,E);
+        startOrWait(C,E);
         Thread I = new Thread(new MySem("I", 20,semaphore));
-        getOrWait(G,I);
+        startOrWait(G,I);
         Thread K = new Thread(new MySem("K", 20,semaphore));
-        getOrWait(G,K);
+        startOrWait(G,K);
 
-        getOrWait(D,N);
+        startOrWait(D,N);
 
         Thread M = new Thread(new MyThread("M", 15));
         I.join();
@@ -51,7 +51,7 @@ public class Main {
         N.join();
 
     }
-            private static void getOrWait(Thread th,Thread th2) throws ExecutionException, InterruptedException
+            private static void startOrWait(Thread th,Thread th2) throws ExecutionException, InterruptedException
             {
                 if(th.isAlive()){
                 th.join();}
