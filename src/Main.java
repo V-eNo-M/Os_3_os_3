@@ -1,9 +1,9 @@
-import java.util.LinkedList;
+
 import java.util.concurrent.*;
 
 public class Main {
     private static int MAX_AVAILABLE = 3;
-    private static ExecutorService executorService = Executors.newCachedThreadPool();
+    //private static ExecutorService executorService = Executors.newCachedThreadPool();
     private static final Semaphore semaphore = new Semaphore(MAX_AVAILABLE, true);
 
     public static void main(String[] args) {
@@ -14,8 +14,7 @@ public class Main {
         Thread D = new Thread(new MySem("D",40,semaphore));
         Thread E = new Thread(new MyThread("E",50));
 
-        Am.run();
-        A.start();
+        A.run();
         D.start();
         E.start();
 
