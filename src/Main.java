@@ -26,14 +26,14 @@ public class Main {
         B.start();
         Thread F = new Thread(new MySem("F", 20,semaphore));
         startOrWait(B,F);
-        Thread E = new Thread(new MySem("E", 50,semaphore));
+        Thread E = new Thread(new MyThread("E", 50));
         startOrWait(C,E);
-        Thread I = new Thread(new MySem("I", 20,semaphore));
+        Thread I = new Thread(new MyThread("I", 20));
         startOrWait(G,I);
-        Thread K = new Thread(new MySem("K", 20,semaphore));
+        Thread K = new Thread(new MyThread("K", 20));
         startOrWait(G,K);
 
-        startOrWait(D,N);
+
 
         Thread M = new Thread(new MyThread("M", 15));
         I.join();
@@ -41,6 +41,8 @@ public class Main {
         H.join();
         F.join();
         M.start();
+
+        startOrWait(D,N);
 
         Thread P = new Thread(new MyThread("P", 15));
         M.join();
